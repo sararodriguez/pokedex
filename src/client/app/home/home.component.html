@@ -1,11 +1,14 @@
 <p>Pokedex</p>
-<div class="pokedex-wrapper">
-  <div class="pokedex-content">
-    <div class="pokedex-header"></div>
-    <div class="pokedex-body"></div>
-    <div class="pokedex-footer"></div>
+<div class="col-md-12">
+  <div class="pokedex-wrapper">
+    <div class="pokedex-content">
+      <div class="pokedex-header"></div>
+      <div class="pokedex-body"></div>
+      <div class="pokedex-footer"></div>
+    </div>
   </div>
 </div>
+
 <ul>
   <li *ngFor="let pokemon of pokemons">
     {{pokemon.name}}, {{pokemon.id}}

@@ -46,6 +46,7 @@ docs
 lib
 test
 tmp
+.sass-cache
 
 gulpfile.js
 gulpfile.js.map
@@ -54,3 +55,4 @@ gulpfile.js.map
 .DS_Store
 src/client/app/shared/config/env.config.js
 src/client/app/shared/config/env.config.js.map
+src/client/css/main.css.map

@@ -1,3 +1,7 @@
+/*
+@import "/../../scss/variables";
+*/
+
 :host {
   display: block;
   padding: 0 16px;
@@ -5,9 +9,13 @@
     width: 250px;
   }
   ul {
-    font-size: 30px;
+    font-size: 18px;
     list-style-type: none;
     padding: 0 0 0 8px;
   }
+  .pokedex-wrapper {
+    width: 200px;
+    height: 200px;
+    background-color: #fa0504;
+  }
 }
-
