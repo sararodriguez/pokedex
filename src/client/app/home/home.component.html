@@ -4,8 +4,8 @@
     <div class="bg_curve1_left"></div>
     <div class="bg_curve2_left"></div>
     <div class="curve1_left">
-      <div class="buttonGlass">
-        <div class="reflect"> </div>
+      <div class="buttonGlass" [ngClass]="{'pokedex-light': objectsFilter.name }">
+        <div class="reflect"></div>
       </div>
       <div class="miniButtonGlass1"></div>
       <div class="miniButtonGlass2"></div>
@@ -58,41 +58,38 @@
     </div>
   </div>
   <div class="pokedex-right">
-    <div class="stats" *ngFor="let pokemon of pokemons | filterBy: {name: objectsFilter.name}">
-      <div class="detailPokedex" *ngIf="pokemon.name === objectsFilter.name">
-        <div class="pokemon-detail">
-          <strong>Id :</strong> {{pokemon.id}}<br/>
-          <strong>Name :</strong> {{pokemon.name}}<br/>
-          <strong>Type :</strong> {{pokemon.type}}<br/>
-          <strong>Height :</strong> {{pokemon.height}}<br/>
-          <strong>Weight :</strong> {{pokemon.weight}}<br/>
-          <strong>Candy :</strong> {{pokemon.candy}}<br/>
-        </div>
-        <div class="pokemon-evolutions">
-          <strong *ngIf="pokemon.prev_evolution">Anterior</strong>
-          <div class="pokemon-evolutions" *ngFor="let pokemonItems of pokemon.prev_evolution; let i = index">
-            <div class="prev-evolutions" *ngIf="pokemon.prev_evolution">
-              {{pokemonItems.num}} - {{pokemonItems.name}}
+    <div class="stats">
+      <div class="detailPokedex"  *ngFor="let pokemon of pokemons | filterBy: {name: objectsFilter.name}">
+        <div *ngIf="pokemon.name === objectsFilter.name">
+          <div class="pokemon-detail">
+            <strong>Id :</strong> {{pokemon.id}}<br/>
+            <strong>Name :</strong> {{pokemon.name}}<br/>
+            <strong>Type :</strong> {{pokemon.type}}<br/>
+            <strong>Height :</strong> {{pokemon.height}}<br/>
+            <strong>Weight :</strong> {{pokemon.weight}}<br/>
+            <strong>Candy :</strong> {{pokemon.candy}}<br/>
+          </div>
+          <div class="pokemon-evolutions">
+            <strong>Evolución</strong>
+            <strong *ngIf="pokemon.prev_evolution">Anterior</strong>
+            <div class="pokemon-evolutions" *ngFor="let pokemonItems of pokemon.prev_evolution; let i = index">
+              <div class="prev-evolutions" *ngIf="pokemon.prev_evolution">
+                {{pokemonItems.num}} - {{pokemonItems.name}}
+              </div>
+            </div>
+            <strong *ngIf="pokemon.next_evolution">Siguiente</strong>
+            <div class="pokemon-evolutions" *ngFor="let pokemonItems of pokemon.next_evolution; let i = index">
+              <div class="prev-evolutions" *ngIf="pokemon.next_evolution">
+                {{pokemonItems.num}} - {{pokemonItems.name}}
+              </div>
             </div>
           </div>
-          <strong *ngIf="pokemon.next_evolution">Siguiente</strong>
-          <div class="pokemon-evolutions" *ngFor="let pokemonItems of pokemon.next_evolution; let i = index">
-            <div class="prev-evolutions" *ngIf="pokemon.next_evolution">
-              {{pokemonItems.num}} - {{pokemonItems.name}}
-            </div>
-          </div>
         </div>
+
       </div>
     </div>
     <div class="blueButtons1">
       <input type="text" placeholder="Buscar pokemón" [(ngModel)]="objectsFilter.name" name="search">
-    </div>
-    <div class="blueButtons2">
-      <p>Filtrar por tipo:</p>
-      <select name="selectmake">
-        <option value="Grass">Grass</option>
-      </select>
-      <button class="btn btn-success">Buscar</button>
     </div>
     <div class="miniButtonGlass4"></div>
     <div class="miniButtonGlass5"></div>
@@ -127,3 +124,7 @@
     </div>
   </li>
 </ul>
+
+
+
+<div id="linkBack" style="position:absolute;right:0px;top:0px;background-color:#333;margin:0;width:60px;padding:5px"><a href="http://www.f-rilling.com/projects/" target="_blank" style="font-size:14px;text-decoration:none;color:#fff;padding:0 0 0 5px;font-family:sans-serif">My Site</a></div>

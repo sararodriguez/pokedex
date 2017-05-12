@@ -1,15 +1,8 @@
-/*
-@import "/../../scss/variables";
-*/
+@import "./../../scss/variables";
 
 :host {
-  * {
-    margin: 0;
-    padding: 0;
-  }
   @media all {
-    .pokedex
-    {
+    .pokedex {
       width: 750px;
       margin: 50px auto 0 auto;
       /*Panel izquierdo
@@ -33,12 +26,12 @@
         .bg_curve2_left {
           width: 400px;
           height: 420px;
-          background-color: #c00d0d;
+          background-color: $pokedex-red;
 
-          box-shadow: -10px 9px #5e0000;
-          -webkit-box-shadow: -10px 9px #5e0000;
-          -moz-box-shadow: -10px 9px #5e0000;
-          -o-box-shadow: -10px 9px #5e0000;
+          box-shadow: -10px 9px $pokedex-red-shadow;
+          -webkit-box-shadow: -10px 9px $pokedex-red-shadow;
+          -moz-box-shadow: -10px 9px $pokedex-red-shadow;
+          -o-box-shadow: -10px 9px $pokedex-red-shadow;
 
           border-bottom-left-radius: 30px;
           -webkit-border-bottom-left-radius: 30px;
@@ -57,10 +50,10 @@
           position: absolute;
           top: 0;
           left: 0;
-          box-shadow: -10px 9px #5e0000;
-          -webkit-box-shadow: -10px 9px #5e0000;
-          -moz-box-shadow: -10px 9px #5e0000;
-          -o-box-shadow: -10px 9px #5e0000;
+          box-shadow: -10px 9px $pokedex-red-shadow;
+          -webkit-box-shadow: -10px 9px $pokedex-red-shadow;
+          -moz-box-shadow: -10px 9px $pokedex-red-shadow;
+          -o-box-shadow: -10px 9px $pokedex-red-shadow;
           border-bottom-right-radius: 85px 60px;
           -webkit-border-bottom-right-radius: 85px 60px;
           -moz-border-bottom-right-radius: 85px 60px;
@@ -170,7 +163,7 @@
         .curve2_left {
           width: 265px;
           height: 450px;
-          background-color: #c00d0d;
+          background-color: $pokedex-red;
           float: right;
           position: absolute;
           bottom: 0;
@@ -183,15 +176,15 @@
             width: 60px;
             height: 451px;
             float: right;
-            /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#8b0000+0,c00d0d+50,8b0000+100,6d0019+100 */
+            /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#8b0000+0$pokedex-red+50,8b0000+100,6d0019+100 */
             background: #8b0000; /* Old browsers */
-            background: -moz-linear-gradient(left, #8b0000 0%, #c00d0d 50%, #8b0000 100%, #6d0019 100%); /* FF3.6-15 */
-            background: -webkit-linear-gradient(left, #8b0000 0%,#c00d0d 50%,#8b0000 100%,#6d0019 100%); /* Chrome10-25,Safari5.1-6 */
-            background: linear-gradient(to right, #8b0000 0%,#c00d0d 50%,#8b0000 100%,#6d0019 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            background: -moz-linear-gradient(left, #8b0000 0%, $pokedex-red 50%, #8b0000 100%, #6d0019 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(left, #8b0000 0%,$pokedex-red 50%,#8b0000 100%,#6d0019 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(to right, #8b0000 0%,$pokedex-red 50%,#8b0000 100%,#6d0019 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
             filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8b0000', endColorstr='#6d0019',GradientType=1 ); /* IE6-9 */
             .junction1 {
               height: 40px;
-              background-color: #5e0000;
+              background-color: $pokedex-red-shadow;
               opacity: 0.3;
               margin-top: 50px;
               margin-bottom: 262px;
@@ -200,7 +193,7 @@
             }
             .junction2 {
               height: 40px;
-              background-color: #5e0000;
+              background-color: $pokedex-red-shadow;
               opacity: 0.3;
               border-top: 2px solid #330000;
               border-bottom: 2px solid #330000;
@@ -225,7 +218,7 @@
           &::after {
             content: "";
             border-top: 40px solid #b0b0b0;
-            border-left: 40px solid #c00d0d;
+            border-left: 40px solid $pokedex-red;
             height: 0;
 
             position: absolute;
@@ -256,7 +249,7 @@
             .buttontopPicture1, .buttontopPicture2 {
               height: 8px;
               width: 8px;
-              background-color: #c00d0d;
+              background-color: $pokedex-red;
               border: 1px solid #000;
               float: left;
 
@@ -272,7 +265,7 @@
           .buttonbottomPicture {
             height: 26px;
             width: 26px;
-            background-color: #c00d0d;
+            background-color: $pokedex-red;
             margin-left: 35px;
             float: left;
 
@@ -281,15 +274,15 @@
             -moz-border-radius: 30px;
             -o-border-radius: 30px;
 
-            box-shadow: -2px 1px #5e0000;
-            -webkit-box-shadow: -2px 1px #5e0000;
-            -moz-box-shadow: -2px 1px #5e0000;
-            -o-box-shadow: -2px 1px #5e0000;
+            box-shadow: -2px 1px $pokedex-red-shadow;
+            -webkit-box-shadow: -2px 1px $pokedex-red-shadow;
+            -moz-box-shadow: -2px 1px $pokedex-red-shadow;
+            -o-box-shadow: -2px 1px $pokedex-red-shadow;
 
-            background: linear-gradient(top, #c00d0d 0%, #8b0000 80%);
-            background: -webkit-linear-gradient(top, #c00d0d 0%, #8b0000 80%);
-            background: -moz-linear-gradient(top, #c00d0d 0%, #8b0000 80%);
-            background: -o-linear-gradient(top, #c00d0d 0%, #8b0000 80%);
+            background: linear-gradient(top, $pokedex-red 0%, #8b0000 80%);
+            background: -webkit-linear-gradient(top, $pokedex-red 0%, #8b0000 80%);
+            background: -moz-linear-gradient(top, $pokedex-red 0%, #8b0000 80%);
+            background: -o-linear-gradient(top, $pokedex-red 0%, #8b0000 80%);
           }
           .speakers {
             float: right;
@@ -580,7 +573,9 @@
         float: left;
         position: relative;
         .stats {
-          height: 130px;
+          height: 120px;
+          min-height: 130px;
+          overflow: auto;
           margin: 0 auto;
           width: 90%;
           padding: 10px;
@@ -807,7 +802,7 @@
         .curve1_right {
           width: 166px;
           height: 451px;
-          background-color: #c00d0d;
+          background-color: $pokedex-red;
           float: right;
 
           position: absolute;
@@ -850,87 +845,20 @@
         .bg_curve2_right {
           width: 350px;
           height: 420px;
-          background-color: #c00d0d;
+          background-color: $pokedex-red;
 
           border-bottom-right-radius: 30px;
           -webkit-border-bottom-right-radius: 30px;
           -moz-border-bottom-right-radius: 30px;
           -o-border-bottom-right-radius: 30px;
 
-          box-shadow: -10px 9px #5e0000;
-          -webkit-box-shadow: -10px 9px #5e0000;
-          -moz-box-shadow: -10px 9px #5e0000;
-          -o-box-shadow: -10px 9px #5e0000;
+          box-shadow: -10px 9px $pokedex-red-shadow;
+          -webkit-box-shadow: -10px 9px $pokedex-red-shadow;
+          -moz-box-shadow: -10px 9px $pokedex-red-shadow;
+          -o-box-shadow: -10px 9px $pokedex-red-shadow;
         }
       }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    /* //// RIGHT PART //// */
-
-
-
-
-
-
-    /*.blueButtons2 {
-      z-index: 1;
-      position: absolute;
-      top: 335px;
-      left: 49px;
-    }*/
-
-
-
-
-
   }
 
   @media handheld and (orientation:portrait), (max-width:768px) {
@@ -957,10 +885,10 @@
           height: 80px;
           background-color: #8b0000;
 
-          box-shadow: -10px 9px #5e0000;
-          -webkit-box-shadow: -10px 9px #5e0000;
-          -moz-box-shadow: -10px 9px #5e0000;
-          -o-box-shadow: -10px 9px #5e0000;
+          box-shadow: -10px 9px $pokedex-red-shadow;
+          -webkit-box-shadow: -10px 9px $pokedex-red-shadow;
+          -moz-box-shadow: -10px 9px $pokedex-red-shadow;
+          -o-box-shadow: -10px 9px $pokedex-red-shadow;
 
           border-top-left-radius: 30px;
           -webkit-border-top-left-radius: 30px;
@@ -978,10 +906,10 @@
           top: 0;
           left: 0;
 
-          box-shadow: 0 0 #5e0000;
-          -webkit-box-shadow: 0 0 #5e0000;
-          -moz-box-shadow: 0 0 #5e0000;
-          -o-box-shadow: 0 0 #5e0000;
+          box-shadow: 0 0 $pokedex-red-shadow;
+          -webkit-box-shadow: 0 0 $pokedex-red-shadow;
+          -moz-box-shadow: 0 0 $pokedex-red-shadow;
+          -o-box-shadow: 0 0 $pokedex-red-shadow;
 
           border-bottom-right-radius: 85px 60px;
           -webkit-border-bottom-right-radius: 85px 60px;
@@ -996,11 +924,20 @@
       }
     }
 
-
     .pokedex-right, .screen, .bigbluebutton, .barbutton1, .barbutton2, .cross
     {
       display: none;
     }
-
+  }
+  /*lightBlueEffect*/
+  .pokedex-light {
+    text-decoration: none;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+    -webkit-animation: lightBlueEffect 1.5s ease-in-out infinite alternate;
+    -moz-animation: lightBlueEffect 1.5s ease-in-out infinite alternate;
+    animation: lightBlueEffect 1.5s ease-in-out infinite alternate;
   }
 }
+
