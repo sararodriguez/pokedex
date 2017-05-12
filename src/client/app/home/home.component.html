@@ -23,7 +23,10 @@
         <div class="buttontopPicture2"></div>
       </div>
       <div class="picture">
-        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/200653/psykokwak.gif" alt="psykokwak" height="170" />
+        <div *ngFor="let pokemon of pokemons">
+          <img src="{{pokemon.img}}" width="170" height="170" *ngIf="pokemon.name === objectsFilter.name">
+        </div>
+        <!--<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/200653/psykokwak.gif" alt="psykokwak" height="170" />-->
       </div>
       <div class="buttonbottomPicture"></div>
       <div class="speakers">
@@ -55,25 +58,39 @@
     </div>
   </div>
   <div class="pokedex-right">
-    <div class="stats">
-      <strong>Name :</strong> Psyduck<br/>
-      <strong>Type :</strong> Water<br/>
-      <strong>Height :</strong> 2'072''<br/>
-      <strong>Weight :</strong> 43.2 lbs.<br/><br/>
-      <strong>The duck Pokemon</strong><br/>
-      Uses mysterious powers to perform various attacks.
+    <div class="stats" *ngFor="let pokemon of pokemons | filterBy: {name: objectsFilter.name}">
+      <div class="detailPokedex" *ngIf="pokemon.name === objectsFilter.name">
+        <div class="pokemon-detail">
+          <strong>Id :</strong> {{pokemon.id}}<br/>
+          <strong>Name :</strong> {{pokemon.name}}<br/>
+          <strong>Type :</strong> {{pokemon.type}}<br/>
+          <strong>Height :</strong> {{pokemon.height}}<br/>
+          <strong>Weight :</strong> {{pokemon.weight}}<br/>
+          <strong>Candy :</strong> {{pokemon.candy}}<br/>
+        </div>
+        <div class="pokemon-evolutions">
+          <strong *ngIf="pokemon.prev_evolution">Anterior</strong>
+          <div class="pokemon-evolutions" *ngFor="let pokemonItems of pokemon.prev_evolution; let i = index">
+            <div class="prev-evolutions" *ngIf="pokemon.prev_evolution">
+              {{pokemonItems.num}} - {{pokemonItems.name}}
+            </div>
+          </div>
+          <strong *ngIf="pokemon.next_evolution">Siguiente</strong>
+          <div class="pokemon-evolutions" *ngFor="let pokemonItems of pokemon.next_evolution; let i = index">
+            <div class="prev-evolutions" *ngIf="pokemon.next_evolution">
+              {{pokemonItems.num}} - {{pokemonItems.name}}
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="blueButtons1">
-      <input type="text" placeholder="Busca pokemón">
-      <button class="btn btn-success">Buscar</button>
+      <input type="text" placeholder="Buscar pokemón" [(ngModel)]="objectsFilter.name" name="search">
     </div>
     <div class="blueButtons2">
-      <p>Filtrar por:</p>
-      <select name="" id="">
-        <option value="Fire">Fire</option>
-        <option value="Water">Water</option>
-        <option value="Flying">Flying</option>
-        <option value="Bug">Bug</option>
+      <p>Filtrar por tipo:</p>
+      <select name="selectmake">
+        <option value="Grass">Grass</option>
       </select>
       <button class="btn btn-success">Buscar</button>
     </div>
@@ -89,10 +106,24 @@
     <div class="curve2_right"></div>
   </div>
 </div>
+<br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br>
 
 <ul>
-  <li *ngFor="let pokemon of pokemons">
-    {{pokemon.name}}, {{pokemon.id}}
+  <li *ngFor="let pokemon of pokemons | filterBy: {name: objectsFilter.name} ">
+    {{pokemon.type}}, {{pokemon.name}}, {{pokemon.id}},
+    <br>
+    {{pokemon.prev_evolution | json}}
     <!--<img src="{{pokemon.img}}" alt="{{pokemon.name}}" title="{{pokemon.name}}">-->
+    <br>------------------------------------<br>
+    <div class="pokemon-evolutions" *ngFor="let pokemonItems of pokemon.prev_evolution; let i = index">
+      {{pokemonItems.num}} - {{pokemonItems.name}}
+      <br>
+    </div>
   </li>
 </ul>
